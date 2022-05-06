@@ -10,7 +10,26 @@ const PostsList = () => {
     // const posts = useSelector(state => state.posts);
     const posts = useSelector(selectAllPosts);
 
-    const renderedPosts = posts.map(post => (
+    // new 3 - list of the posts in order
+    const orderedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date))
+
+
+    // const renderedPosts = posts.map(post => (
+    //     <article key={post.id}>
+    //         <h3>{post.title}</h3>
+    //         <p>{post.content.substring(0, 100)}</p>
+    //         {/* new 1 */}
+    //         <p className="postCredit">
+    //             <PostAuthor userId={post.userId} />
+    //             <TimeAgo timestamp={post.date} />
+    //         </p>
+
+
+    //     </article>
+    // ))
+
+    //new 3
+    const renderedPosts = orderedPosts.map(post => (
         <article key={post.id}>
             <h3>{post.title}</h3>
             <p>{post.content.substring(0, 100)}</p>
