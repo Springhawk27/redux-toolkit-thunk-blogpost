@@ -6,6 +6,9 @@ import PostAuthor from './PostAuthor';
 // new 2
 import TimeAgo from './TimeAgo';
 
+// new 4
+import ReactionButtons from './ReactionButtons';
+
 const PostsList = () => {
     // const posts = useSelector(state => state.posts);
     const posts = useSelector(selectAllPosts);
@@ -38,6 +41,8 @@ const PostsList = () => {
                 <PostAuthor userId={post.userId} />
                 <TimeAgo timestamp={post.date} />
             </p>
+            {/* new 4 */}
+            <ReactionButtons post={post} />
 
 
         </article>

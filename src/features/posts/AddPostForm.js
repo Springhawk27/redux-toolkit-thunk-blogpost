@@ -35,6 +35,7 @@ const AddPostForm = () => {
             )
             setTitle('')
             setContent('')
+            setUserId('')
         }
     };
 
